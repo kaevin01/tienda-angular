@@ -1,0 +1,9 @@
+<h1>{{pageTitle}}</h1>
+<div id="listado-marcas">
+  <div *ngFor="let brand of brands" class="miniatura-marca" (click)="goToList(brand.id)">
+    <!--a routerLink="list/brand.id"></a-->
+    <p>{{brand.name}}</p>
+    <img [src]="imgUrl+brand.imagen" alt="imagen de marca">
+
+  </div>
+</div>

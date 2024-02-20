@@ -1,0 +1,15 @@
+<section>
+  <header>
+    <h2>Estos son nuestros productos Oferta</h2>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium eveniet ut voluptate dolor nesciunt
+      molestias quasi esse optio voluptatum omnis.</p>
+  </header>
+  <div id="lista-ofertas">
+
+    <div *ngFor="let product of products">
+
+      <app-product-minature [product]="product" ></app-product-minature>
+
+    </div>
+  </div>
+</section>

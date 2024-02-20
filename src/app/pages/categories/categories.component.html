@@ -1,0 +1,7 @@
+<h1>{{pageTitle}}</h1>
+<div id="listado-categorias">
+  <div class="miniatura-categoria" *ngFor="let category of categories" (click)="goToList(category.id)">
+    <p>{{category.name}}</p>
+    <img [src]="imgUrl+category.imagen" [alt]="category.name">
+  </div>
+</div>

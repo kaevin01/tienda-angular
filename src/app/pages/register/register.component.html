@@ -1,0 +1,55 @@
+<h2>{{ pageTitle }}</h2>
+
+<form id="registroForm" (ngSubmit)="onSubmit()">
+  <fieldset>
+    <label for="nombre">Nombre:</label>
+    <input
+      type="text"
+      id="nombre"
+      name="nombre"
+      [(ngModel)]="formData.nombre"
+      required
+    />
+  </fieldset>
+  <fieldset>
+    <label for="email">Email:</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      [(ngModel)]="formData.email"
+      required
+    />
+  </fieldset>
+  <fieldset>
+    <label for="password">Contraseña:</label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      [(ngModel)]="formData.password"
+      required
+    />
+  </fieldset>
+  <fieldset>
+    <label for="direccion">Dirección:</label>
+    <input
+      type="text"
+      id="direccion"
+      name="direccion"
+      [(ngModel)]="formData.direccion"
+      required
+    />
+  </fieldset>
+  <fieldset>
+    <label for="telefono">Teléfono:</label>
+    <input
+      type="text"
+      id="telefono"
+      name="telefono"
+      [(ngModel)]="formData.telefono"
+      required
+    />
+  </fieldset>
+  <input type="submit" value="Registrarse" />
+</form>

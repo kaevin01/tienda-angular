@@ -1,0 +1,27 @@
+#listado-marcas {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  .miniatura-marca {
+    flex: 1 1 calc(100% / 5);
+    font-size: 1.5rem;
+    text-align: center;
+    border: 1px solid #000000;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    cursor: pointer;
+    p {
+      margin: 0;
+      background-color: rgb(36, 36, 36);
+      color: white;
+      text-transform: uppercase;
+      padding: 0.5rem 0;
+    }
+    img {
+      width: 100%;
+      height: calc(100% - 44px);
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@import "../../../scss/vars";
+#footer-principal{
+  border-top: 3px solid $oscuro-1;
+  border-bottom: 12px solid $oscuro-1;
+  .container{
+    display: flex;
+    gap: 1rem;
+    margin: 3rem auto 1rem auto;
+    width: $max-width;
+    > div{
+      width: clamp(320px,calc(33% - 1rem), 100%);
+    }
+  }
+}

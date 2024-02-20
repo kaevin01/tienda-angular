@@ -1,0 +1,36 @@
+<div class="header-cart">
+  <i class="icon icon-cart" (click)="toggleCart()"></i
+  ><span id="items-counter">{{ cartProducts.length }}</span>
+
+  <div
+    class="cart-container"
+    [ngClass]="{ visible: cartStatus }"
+    (mouseleave)="toggleCart()"
+  >
+    <div class="cart-container-body">
+      <div class="cart-product-row" *ngFor="let item of cartProducts">
+        <div class="product-name">{{ item.name }}</div>
+        <div data-id="12" class="product-price">
+          {{ item.price | priceFormat }}
+        </div>
+        <div class="product-units">x {{ item.quantity }}</div>
+        <div
+          class="delete-btn"
+          (click)="cartService.removeFromCart(item.id)"
+        ></div>
+      </div>
+    </div>
+
+    <div class="cart-container-sumatory">
+      Total:
+      <span class="cart-total">{{ cartService.getTotal() | priceFormat }}</span>
+    </div>
+
+    <div class="cart-container-buttons">
+      <button id="resetCart" (click)="cartService.resetCart()">
+        Vaciar carrito
+      </button>
+      <button id="goCheckout" (click)="goToOrder()">Realizar pedido</button>
+    </div>
+  </div>
+</div>

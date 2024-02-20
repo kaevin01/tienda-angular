@@ -1,0 +1,60 @@
+<div class="cool-slider-frame">
+  <div class="cool-slider-container">
+    <div class="cool-slider-element">
+      <img src="assets/gallery/slider-01.jpg" alt="" class="img-center" draggable="false">
+      <div class="cool-slider-element-text">
+        <h3>Consectetur adipisicing elit</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. , aliquam sint earum laudantium sit, optio
+          numquam et corporis reiciendis id? Eos, voluptatem porro!</p>
+        <a href="#">Ver oferta</a>
+      </div>
+    </div>
+    <div class="cool-slider-element">
+      <img src="assets/gallery/slider-02.jpg" alt="" class="img-center" draggable="false">
+      <div class="cool-slider-element-text">
+        <h3>Doloribus adipisicing</h3>
+        <p>Lorem ipsum dolor sit amet consectetur.Aliquid explicabo, doloribus adipisicing elit. Expedita quas
+          labore dolor velit? Aliquid explicabo, doloribus, aliquam sint earum laudantium sit, optio numquam et
+          corporis reiciendis id? Eos, voluptatem porro!</p>
+      </div>
+    </div>
+
+    <div class="cool-slider-element">
+      <img src="assets/gallery/slider-03.jpg" alt="" class="img-center" draggable="false">
+      <div class="cool-slider-element-text">
+        <h3>Expedita quas labore</h3>
+        <p>Aliquid explicabo, doloribus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quas
+          labore dolor velit? , aliquam sint earum laudantium sit, optio numquam et corporis reiciendis id? Eos,
+          voluptatem porro!</p>
+      </div>
+    </div>
+
+    <div class="cool-slider-element">
+      <img src="assets/gallery/slider-04.jpg" alt="" class="img-center" draggable="false">
+      <div class="cool-slider-element-text">
+        <h3>Aliquid explicabo</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid explicabo, doloribus, aliquam sint earum
+          laudantium sit, optio numquam et corporis reiciendis id? Eos, voluptatem porro!</p>
+      </div>
+    </div>
+
+    <div class="cool-slider-element">
+      <img src="assets/gallery/slider-05.jpg" alt="" class="img-center" draggable="false">
+      <div class="cool-slider-element-text">
+        <h3>Sint earum laudantium</h3>
+        <p>Expedita quas labore dolor velit? Aliquid explicabo, doloribus, aliquam sint earum laudantium sit, optio
+          numquam et corporis reiciendis id? Eos, voluptatem porro!</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cool-slider-handler cool-slider-hadler-left" (click)="backSlide()"></div>
+  <div class="cool-slider-handler cool-slider-hadler-right" (click)="forwardSlide()"></div>
+
+  <div class="cool-slider-dots-container">
+    <div class="cool-slider-dot" *ngFor="let element of elements; let i = index" [class.active]="i === positionCounter" (click)="goToSlide(i)">
+    </div>
+  </div>
+
+</div>

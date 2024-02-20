@@ -1,0 +1,21 @@
+<h1>{{ titlePage }}</h1>
+<div id="order-container">
+  <table>
+    <tbody>
+      <tr *ngFor="let product of cartProducts">
+        <td><img [src]="rutaImagen + product.imagenprincipal" /></td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price | priceFormat }}</td>
+        <td>x {{ product.quantity }}</td>
+        <td>{{ product.price * product.quantity | priceFormat }}</td>
+      </tr>
+      <tr>
+        <td colspan="4"><button class="buy-comprar" (click)="saveOrderClick()" *ngIf="this.session.isLoggedIn() == true" >Realizar pedido</button></td>
+        <td class="importe-total">{{ totalPedido | priceFormat }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="respuesta" *ngIf="pedidoCompletado == true" >
+  <h2>{{mensajeCompletado}}</h2>
+</div>

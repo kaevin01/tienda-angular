@@ -1,0 +1,9 @@
+<h1>{{ title }}</h1>
+<p>Cambia aquí tu título</p>
+<input type="text" [(ngModel)]="inputValue">
+<button (click)="cambiarTitulo(inputValue)">Cambiar título</button>
+
+<app-contador [contador]="valor"></app-contador>
+<app-contador-botones (incrementar)="incrementarContador()"
+(decrementar)="decrementarContador()"></app-contador-botones>
+s

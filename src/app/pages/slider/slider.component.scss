@@ -1,0 +1,173 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+img {
+  max-width: 100%;
+}
+main {
+  max-width: 1200px;
+  width: 90vw;
+  margin-inline: auto;
+}
+
+.cool-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  .cool-slider-viewer {
+    position: relative;
+    left: 0;
+    display: flex;
+    transition: left 0.5s;
+  }
+  .handler-next,
+  .handler-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: rgb(87, 180, 194);
+    background-image: url("../../../assets/gallery/iconmonstr-arrow-25.svg");
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+  .handler-next {
+    right: 0.5rem;
+  }
+  .handler-prev {
+    left: 0.5rem;
+    transform: translateY(-50%) rotate(0.5turn);
+  }
+}
+
+.cool-slider-frame {
+  position: relative;
+  max-width: 1200px;
+  overflow: hidden;
+  margin-inline: auto;
+  font-family: "Source Sans Pro";
+}
+
+.cool-slider-container {
+  border: 2px steelblue;
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  transition: left 0.5s ease-in;
+  left: 0;
+  .grabbingClass {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+    transition: none;
+  }
+}
+
+.cool-slider-element {
+  position: relative;
+  width: 100%;
+  flex: 1 0 100%;
+}
+
+.cool-slider-element * {
+  pointer-events: none;
+}
+.cool-slider-element-text {
+  position: absolute;
+  display: block;
+  padding: 1rem;
+  width: clamp(18rem, 18rem + 10vw, 33%);
+  background-color: rgba(133, 133, 133, 0.473);
+  color: white;
+  bottom: 10%;
+  right: 10%;
+}
+
+.cool-slider-element-text {
+  position: absolute;
+  display: block;
+  padding: 1rem;
+  width: clamp(18rem, 18rem + 10vw, 33%);
+  height: 100%;
+  background-color: rgba(133, 133, 133, 0.473);
+  color: white;
+  bottom: 0;
+  right: 10%;
+}
+
+.cool-slider-element-text a {
+  display: block;
+  background: linear-gradient(to bottom, #4b7c92 50%, #395f70 80%, #334f5c 90%);
+  padding: 0.5rem;
+  color: white;
+  border-radius: 0.3rem;
+  text-decoration: none;
+  width: fit-content;
+  transition: all 0.5s;
+  pointer-events: all;
+}
+.cool-slider-element-text h3 {
+  font-size: clamp(1.5rem, 1.5rem + 10vw, 2.5rem);
+  line-height: 1;
+  margin-block: 0.5rem;
+}
+.cool-slider-element-text a:hover {
+  background: linear-gradient(to bottom, #72bcdf 50%, #5b97b3 80%, #4b7588 90%);
+}
+
+.cool-slider-handler {
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background-image: url("../../../assets/gallery/iconmonstr-arrow-25.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  background-color: rgba(0, 183, 255, 0.9);
+  transition: background-color 0.5s ease;
+}
+
+.cool-slider-handler:hover {
+  background-color: rgb(0, 157, 255);
+}
+
+.cool-slider-hadler-left {
+  transform: translateY(-50%) rotate(180deg);
+  left: 40px;
+}
+.cool-slider-hadler-right {
+  right: 40px;
+}
+
+.cool-slider-dots-container {
+  position: absolute;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.cool-slider-dot {
+  width: 15px;
+  height: 15px;
+  background-color: rgb(219, 219, 219);
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.cool-slider-dot.active {
+  background-color: rgb(87, 87, 87);
+}

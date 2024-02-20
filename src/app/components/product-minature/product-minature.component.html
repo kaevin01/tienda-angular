@@ -1,0 +1,19 @@
+<div class="miniatura-producto" [ngClass]="{'destacado':product.destacado==1, 'oferta':product.offer==1}">
+
+    <div (click)="navigateToDetails()">
+      <img [src]="urlImages+product.imagenprincipal">
+      <p class="miniatura-nombre">
+        {{product.name}}
+      </p>
+    </div>
+  
+    <p class="miniatura-precio">{{product.price | priceFormat}}</p>
+    <p class="miniatura-descripcion">
+      {{product.description}}
+    </p>
+    <div class="miniatura-marca-categoria">
+      <a class="categoria">{{product.category_name}}</a>
+      <a class="marca">{{product.brand_name}}</a>
+    </div>
+    <button class="buy-button" (click)="addToCartClick()">Comprar</button>
+  </div>

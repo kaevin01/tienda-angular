@@ -1,0 +1,45 @@
+#order-container {
+  margin: 2rem 0;
+  .btn-comprar {
+    transform: translateX(700px);
+    border-color: green;
+    border-radius: 8px;
+    background-color: green;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: white;
+    padding: 0.8rem;
+    cursor: pointer;
+    &:hover {
+      background-color: white;
+      color: green;
+      transition: 0.2s;
+    }
+  }
+  table {
+    margin: 2rem 0;
+    width: 100%;
+    tr:nth-of-type(odd) {
+      background-color: rgb(229, 229, 229);
+    }
+    tr:nth-of-type(even) {
+      background-color: whitesmoke;
+    }
+    td {
+      padding: 1rem;
+    }
+    tr {
+      td:first-of-type {
+        width: 100px;
+      }
+    }
+    img {
+      width: 100px;
+      background-color: white;
+      border-radius: 3px;
+    }
+    .importe-total {
+      font-size: 1.8rem;
+    }
+  }
+}

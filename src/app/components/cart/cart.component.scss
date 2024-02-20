@@ -1,0 +1,72 @@
+@import "../../../scss/vars";
+.header-cart {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  .icon {
+    display: block;
+    height: 40px;
+    width: 40px;
+    margin: 0 0.2rem;
+    padding: 0.5rem;
+    background-color: $blue-2;
+    border-radius: 0.2rem;
+    cursor: pointer;
+  }
+  .icon-cart {
+    margin-right: 1rem;
+    &::before {
+      content: "";
+      display: block;
+      height: 40px;
+      width: 40px;
+      background-image: url("../../../assets/icons/cart.png");
+      background-repeat: no-repeat;
+    }
+  }
+
+  #items-counter {
+    position: absolute;
+    top: -1rem;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: $blue-1;
+    border-radius: 50%;
+    color: white;
+  }
+  .cart-container{
+    position: absolute;
+    top: 2.4rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: whitesmoke;
+    padding: $global-padding;
+    width: clamp(320px, 100% + 15vw, 100vw);
+    .cart-product-row{
+      display: grid;
+      grid-template-columns: calc(70% - 60px) 30% 40px 20px;
+      margin: 1rem 0;
+      .product-price{
+        text-align: right;
+        padding-right: .5rem;
+      }
+      .delete-btn{
+        min-width: 20px;
+        height: 20px;
+        background-image: url("../../../assets/icons/trash.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+    &.visible{
+      display: flex;
+    }
+  }
+}

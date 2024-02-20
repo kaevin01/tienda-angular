@@ -1,0 +1,9 @@
+  #lista-ofertas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    .miniatura-producto {
+      flex: 0 0 calc(25% - 2rem);
+      min-width: 280px;
+    }
+  }

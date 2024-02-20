@@ -1,0 +1,87 @@
+@import "../../../scss/vars";
+#header-principal{
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 3px solid $turquis-1;
+  background-color: white;
+
+  .container {
+    display: grid;
+    grid-template-columns: 20% auto 55px 55px;
+    align-items: center;
+    width: $max-width;
+  }
+  .header-searcher {
+    display: flex;
+    justify-content: center;
+    label {
+      &::after {
+        content: "";
+        display: block;
+        padding: 0.5rem;
+        height: 40px;
+        width: 40px;
+        background-color: $blue-2;
+        //background-image: url("../../../assets/icons/lupa.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 0 0.3rem 0.3rem 0;
+      }
+    }
+    input {
+      width: 50%;
+      font-size: 1rem;
+      padding: .3rem;
+      border: 1px solid $blue-2;
+      border-right: 0;
+      border-radius: 0.3rem 0 0 0.3rem;
+      outline: 0;
+      &:focus{
+        border-color: $blue-1 ;
+      }
+    }
+  }
+  .icon {
+    display: block;
+    height: 40px;
+    width: 40px;
+    margin: 0 0.2rem;
+    padding: 0.5rem;
+    background-color: $blue-2;
+    border-radius: 0.2rem;
+    cursor: pointer;
+  }
+  .icon-user {
+    &::before {
+      content: "";
+      display: block;
+      height: 40px;
+      width: 40px;
+      background-image: url("../../../assets/icons/user.png");
+      background-repeat: no-repeat;
+    }
+  }
+  .header-users{
+    text-align: center;
+    p{
+      margin: 0;
+      font-size: .6rem;
+    }
+    &.logado{
+      padding-top: 12px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .icon{
+        background-color: lighten($green-1, 30%);
+      }
+    }
+  }
+
+}

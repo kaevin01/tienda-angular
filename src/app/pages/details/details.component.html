@@ -1,0 +1,48 @@
+<section id="ficha-producto">
+  <div id="imagenes-block">
+    <div id="imagen-principal-container">
+      <img [src]="urlImagePrime" [alt]="product.name" />
+    </div>
+    <div
+      *ngIf="urlThumbs.length > 1"
+      id="thumbs-container"
+      class="cool-carousel"
+      data-view="4"
+      data-step="1"
+    >
+      <div class="cool-carousel-viewer">
+        <img 
+          *ngFor="let url of urlThumbs"
+          [src]="urlImages + '/products/' + url"
+          (click)="toggleImage(url)"
+        />
+      </div>
+    </div>
+  </div>
+  <div id="ficha-producto-detalles">
+    <p id="producto-nombre">{{ product.name }}</p>
+    <p id="producto-precio">{{ product.price | priceFormat }}</p>
+    <button id="boton-comprar" class="buy-button">Comprar</button>
+    <div id="producto-categoria-marca">
+      <a id="producto-marca" class="marca">{{ product.brand_name }}</a>
+      <a id="producto-categoria" class="categoria">{{
+        product.category_name
+      }}</a>
+    </div>
+    <p id="producto-stock"></p>
+    <div id="ficha-producto-descripcion">{{ product.description }}</div>
+  </div>
+  <div *ngIf="relatedProducts.length > 0" id="bloque-relacionados" >
+    <h3>Estos son productos relacionados:</h3>
+    <div
+      id="ficha-producto-relacionados"
+      class="cool-carousel"
+      data-view="3"
+      data-step="1"
+    >
+      <div class="cool-carousel-viewer">
+        <app-product-minature *ngFor="let relatedProduct of relatedProducts" [product]="relatedProduct"></app-product-minature>
+      </div>
+    </div>
+  </div>
+</section>

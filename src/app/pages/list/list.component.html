@@ -1,0 +1,18 @@
+<section>
+  <header>
+    <h1>{{ titlePage }}</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quisquam
+      saepe mollitia repellat nulla quam voluptate quidem odio architecto
+      delectus eveniet similique, itaque, non nam hic quibusdam rem
+      reprehenderit ducimus.
+    </p>
+  </header>
+
+  <div id="listado-productos">
+    <app-product-minature
+      *ngFor="let producto of productsList"
+      [product]="producto"
+    ></app-product-minature>
+  </div>
+</section>

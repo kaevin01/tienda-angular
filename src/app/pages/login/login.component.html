@@ -1,0 +1,36 @@
+<h1>{{ pageTitle }}</h1>
+
+<form
+  id="loginForm"
+  (submit)="onLogin()"
+  *ngIf="this.sesionService.isLoggedIn() != true"
+>
+  <fieldset>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" [(ngModel)]="email" required />
+  </fieldset>
+
+  <fieldset>
+    <label for="password">Contraseña:</label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      [(ngModel)]="password"
+      required
+    />
+  </fieldset>
+
+  <input type="submit" id="botonSubmit" value="Iniciar Sesión" />
+</form>
+<div *ngIf="this.sesionService.isLoggedIn() == true">
+  <h2>Bienvenido {{ this.sesionService.getUserName() }}</h2>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, optio
+    corporis? Eum, porro perspiciatis libero harum placeat, debitis error
+    eligendi repellendus nobis esse id suscipit officiis, doloremque
+  </p>
+  <button (click)="goToHistory()" class="boton-negro">
+    Ver historial de pedidos
+  </button>
+</div>
